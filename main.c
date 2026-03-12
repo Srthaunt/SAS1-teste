@@ -48,17 +48,20 @@ void app_main() {
 
             case 2: // vermelho piscante
                 printf("Atenção!\n");
+                gpio_set_level(VERDE, 0);
                 gpio_set_level(VERMELHO, 1);
                 vTaskDelay(100 / portTICK_PERIOD_MS);
                 gpio_set_level(VERMELHO, 0);
                 vTaskDelay(100 / portTICK_PERIOD_MS);
-              gpio_set_level(VERMELHO, 1);
-                vTaskDelay(100 / portTICK_PERIOD_MS);
-                gpio_set_level(VERMELHO, 0);
-                vTaskDelay(100 / portTICK_PERIOD_MS);gpio_set_level(VERMELHO, 1);
+                gpio_set_level(VERMELHO, 1);
                 vTaskDelay(100 / portTICK_PERIOD_MS);
                 gpio_set_level(VERMELHO, 0);
                 vTaskDelay(100 / portTICK_PERIOD_MS);
+                gpio_set_level(VERMELHO, 1);
+                vTaskDelay(100 / portTICK_PERIOD_MS);
+                gpio_set_level(VERMELHO, 0);
+                vTaskDelay(100 / portTICK_PERIOD_MS);
+                 estado_atual = 0;
                 break;
         }
     }
